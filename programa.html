@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<script>
+  var pularLinha = function () {
+    document.write ("<br>");
+  }
+
+  var mostrar = function(frase){
+    document.write (frase);
+    pularLinha();
+  }
+
+  var calculoIMC = function(altura, peso) {
+    var imc = peso / (altura * altura);
+    mostrar("Seu IMC é: " + Math.round(imc));
+
+    var diferenca = 35 - imc;
+    mostrar("Você esetá " + Math.round(diferenca) + " pontos da obesidade severa.");
+
+    var magreza = imc - 18.5;
+    mostrar("Você está " + Math.round(magreza) + " pontos no limite de magreza.");
+  }
+
+  var seuPeso = prompt("Qual é o seu Peso?");
+  var suaAltura = prompt("Qual a sua altura?");
+
+  calculoIMC(suaAltura, seuPeso);
+
+  var idade = prompt("Qual é sua idade?");
+  var dias = idade * 365;
+  var horas = dias * 365;
+  var batidas = dias * 24 * 60 * 80;
+
+  mostrar("Você já viveu " + dias + " dias.");
+  mostrar("Você já viveu " + horas + " horas.");
+  mostrar("Seu coração já bateu " + batidas + " vezes.");
+</script>

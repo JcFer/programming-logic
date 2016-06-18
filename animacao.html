@@ -1,0 +1,20 @@
+<meta charset="utf-8"/>
+<canvas id="tela" width="600" height="400"></canvas>
+<script>
+    var imagem = new Image();
+    imagem.src = "http://www.wallacesilva.com/blog/wp-content/uploads/2015/08/jQuery-logo.png";
+
+    var desenhaImagem = function(x, y) {
+        c.drawImage(imagem, x, y);
+    };
+
+    var x = 1;
+    
+    var desenha = function() {
+        limpaTela();
+        circulo(x, 100, 10);
+        desenhaImagem(x, 200);
+        //circulo(x, 100, x/2);
+        x = x + 1;
+    };
+</script>

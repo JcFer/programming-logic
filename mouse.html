@@ -1,0 +1,38 @@
+<meta charset="utf-8"/>
+<canvas id="tela" width="600" height="400"></canvas>
+<script>
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+
+    c.fillStyle="gray";
+    c.fillRect(0, 0, 600, 400);
+    
+    var atira = function(evento) {
+        console.log("botao esquerdo");
+        
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+        
+        c.fillStyle = "blue";
+        c.beginPath();
+        c.arc (x, y, 10, 0, 2 * 3.14);
+        c.fill();
+    };
+    
+    var atira2 = function(evento) {
+        console.log("botao direito");
+        
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+        
+        c.fillStyle = "green";
+        c.beginPath();
+        c.arc (x, y, 10, 0, 2 * 3.14);
+        c.fill();
+        
+        evento.preventDefault();
+    };
+    
+    tela.onclick = atira;
+    tela.oncontextmenu = atira2;
+</script>
